@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '../styles/components/Countdown.module.css'
 
 export function Countdown() {
   const [time, setTime] = useState(25 * 60);
+  const [active, setActive] = useState(false);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -10,6 +11,19 @@ export function Countdown() {
   // split retorna um array com 2 valores, basta destruturar
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
+
+
+  function startCountdown () {
+    setActive(true);
+  }
+
+  useEffect(() => {
+    if(active && time > 0) {
+      setTimeout(() => {
+        setTime(time - 1);
+      }, 1000);
+    }
+  }, [active, time]);
 
   return(
     <div>
@@ -25,7 +39,7 @@ export function Countdown() {
       </div>
     </div>
 
-    <button type="button" className={styles.countdownButton}>Start cycle</button>
+    <button type="button" className={styles.countdownButton} onClick={startCountdown}>Start cycle</button>
     </div>
     
   )
