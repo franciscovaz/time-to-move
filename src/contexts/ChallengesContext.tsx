@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import challenges from '../../challenges.json';
 
-
+import Cookies from 'js-cookie';
 interface Challenge {
   type: 'body' | 'eye';
   description: string;
@@ -39,13 +39,18 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     Notification.requestPermission();
   }, []);
 
+  useEffect(() => {
+    Cookies.set('level', String(level));
+    Cookies.set('currentExperience', String(currentExperience));
+    Cookies.set('challengesCompleted', String(challengesCompleted));
+  }, [level, currentExperience, challengesCompleted]);
+
 
   function levelUp() {
     setLevel(level + 1);
   }
 
   function startNewChallenge() {
-    console.log('New challenge');
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
 
@@ -54,7 +59,7 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     new Audio('/notification.mp3').play();
     
     if(Notification.permission === 'granted') {
-      new Notification('New challenge 🎉 ', {
+      new Notification('New challenge 🎉', {
         body: `Worth ${challenge.amount}xp!`
       } )
     }
