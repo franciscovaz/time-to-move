@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="./public/logo-full.svg" />
+</p>
 
-## Getting Started
 
-First, run the development server:
+<p align="center">
+  <img src="./public/home.svg" />
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
+# :pushpin: Content
+
+- [:pushpin: Content](#pushpin-content)
+- [:satisfied: About](#satisfied-about)
+- [:snowflake: Technologies](#snowflake-technologies)
+- [:question: Run project](#question-run-project)
+
+---
+# :satisfied: About
+The Time to Move project, developed during the fourth edition of NextLevelWeek by [Rocketseat](https://rocketseat.com.br/) on the React track, consists of helping people to control their time in front of the PC in order to make small breaks and so, rest the vision and the body. 
+
+---
+# :snowflake: Technologies
+* [React](https://pt-br.reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [NextJs](https://nextjs.org/)
+
+---
+# :question: Run project
+
+1. Open your terminal in the desired folder to clone the repository and execute:
+``` bash
+git clone https://github.com/franciscovaz/time-to-move.git
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. After, execute the following commands to initialize the server:
+``` bash
+cd time-to-move/
+```
+3. Install dependencies:
+``` bash
+yarn install
+```
+4. Start server:
+``` bash
+yarn start
+```
+5. At the end you can open the project folder in your IDE and do the changes you want, and you can do some Pull Request for me to improve! 
