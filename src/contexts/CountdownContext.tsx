@@ -22,7 +22,7 @@ export const CountdownContext = createContext({} as CountdownContextData);
 export function CountdownProvider( { children }: CountdownProviderProps) {
   const { startNewChallenge } = useContext(ChallengesContext);
   
-  const [time, setTime] = useState(25 * 60);
+  const [time, setTime] = useState(25 * 60); // TODO 25 - from input
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
 
